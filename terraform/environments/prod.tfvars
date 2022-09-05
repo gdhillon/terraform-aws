@@ -30,8 +30,3 @@ workspace_vpc = "10.155.64.0/21"
 # Trasit Gateway ID
 
 transit_gtway_id = "tgw-0876b783513e11e3e"
-
-# Redshift
-cluster_node_type        = "ra3.xlplus"
-cluster_number_of_nodes  = "1"
-automated_snapshot_retention_period = "7"
