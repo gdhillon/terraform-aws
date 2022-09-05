@@ -21,7 +21,7 @@ resource "aws_route53_resolver_endpoint" "outbound_resolver" {
 
 resource "aws_route53_resolver_rule" "fwd1" {
   domain_name          = var.route_domain1
-  name                 = "lion_aws-forwarder-${var.environment}"
+  name                 = "netxillon_aws-forwarder-${var.environment}"
   rule_type            = "FORWARD"
   resolver_endpoint_id = aws_route53_resolver_endpoint.outbound_resolver.id
 
@@ -49,7 +49,7 @@ resource "aws_route53_resolver_rule" "fwd2" {
   }
 }
 
-resource "aws_route53_resolver_rule_association" "outbound_attach_lion" {
+resource "aws_route53_resolver_rule_association" "outbound_attach_netxillon" {
   resolver_rule_id = aws_route53_resolver_rule.fwd1.id
   vpc_id           = aws_vpc.main.id
 }
