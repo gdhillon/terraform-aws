@@ -17,14 +17,18 @@ private_subnets_workloads  = ["10.155.106.0/23", "10.155.108.0/23", "10.155.110.
 availability_zones = ["ap-southeast-2a", "ap-southeast-2b", "ap-southeast-2c"]
 
 # DHCP Uptions for VPC
-domain_name          = "lion.aws"
+domain_name          = "netxillon.net"
 domain_name_servers  = ["AmazonProvidedDNS"]
 ntp_servers          = ["203.29.242.183", "169.254.169.123"]
 
+# Route 53 Domains
+route_domain1        = "netxillon.net"
+route_domain2        = "example.net"
+
 # Route table CIDRs
-shared_vpc = "10.155.8.0/21"
-sap_vpc = "10.155.56.0/21"
-workspace_vpc = "10.155.64.0/21"
+shared_vpc = "11.1.1.0/24"
+app_vpc = "11.1.2.0/24"
+database_vpc = "11.1.3.0/24"
 
 # Trasit Gateway ID
 

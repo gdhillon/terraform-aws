@@ -18,7 +18,7 @@ private_subnets_workloads  = ["10.15.90.0/23", "10.15.92.0/23", "10.15.94.0/23"]
 availability_zones = ["us-east-2a", "us-east-2b", "us-east-2c"]
 
 # DHCP Uptions for VPC
-domain_name          = "lion.aws"
+domain_name          = "netxillon.net"
 domain_name_servers  = ["AmazonProvidedDNS"]
 ntp_servers          = ["169.254.169.123"]
 
