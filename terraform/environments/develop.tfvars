@@ -10,13 +10,6 @@ environment = "dev"
 # AWS region name to be used for resource provisioning
 region = "us-east-2"  
 
-# VPC parameters
-cidr = "10.155.88.0/21"
-private_subnets_tgw  = ["10.155.88.0/28", "10.155.88.16/28","10.155.88.32/28"]
-private_subnets_redshift  = ["10.155.88.112/28", "10.155.88.128/28"]
-private_subnets_workloads  = ["10.155.90.0/23", "10.155.92.0/23", "10.155.94.0/23"]
-availability_zones = ["us-east-2a", "us-east-2b", "us-east-2c"]
-
 # VPC Internet Facing
 cidr_ingress = "10.155.233.192/26"
 public_subnets_tgw  = ["10.155.233.192/28", "10.155.233.208/28"]

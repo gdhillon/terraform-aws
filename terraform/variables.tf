@@ -33,31 +33,6 @@ variable "AWS_SECRET_ACCESS_KEY" {
   description = "AWS Secret Access key"
 }
 
-variable "cidr" {
-  type = string
-  description = "CIDR block to be used for VPC, e.g. 10.5.0.0/16"
-}
-
-variable "availability_zones" {
-  description = "a comma-separated list of availability zones, defaults to all AZ of the region, if set to something other than the defaults, both private_subnets and public_subnets have to be defined as well"
-  default     = ["us-east-1a", "us-east-1b", "us-east-1c"]
-}
-
-variable "private_subnets_tgw" {
-  type = list(string)
-  description = "List of subnets dedicated to the transit gateway"
-}
-
-variable "private_subnets_workloads" {
-  type = list(string)
-  description = "List of subnets for the workloads"
-}
-
-variable "shared_vpc" {
-  type = string
-  description = "CIDR block of the shared VPC"
-}
-
 variable "sap_vpc" {
   type = string
   description = "CIDR block of the SAP VPC"
@@ -83,19 +58,6 @@ variable "domain_name_servers" {
 
 variable "ntp_servers" {
   description = "List of NTP Servers"
-}
-
-variable "route_domain1" {
-  description = "Domain name forwarding"
-}
-
-variable "route_domain2" {
-  description = "Domain name forwarding"
-}
-
-variable "private_subnets_redshift" {
-  type = list(string)
-  description = "List of subnets for the Redshift Cluster"
 }
 
 # Define variables for public vpc
