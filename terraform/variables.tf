@@ -85,7 +85,7 @@ variable "public_subnets_workloads" {
 
 variable "public_availability_zones" {
   description = "a comma-separated list of availability zones, defaults to all AZ of the region, if set to something other than the defaults, both private_subnets and public_subnets have to be defined as well"
-  default     = ["us-east-1a", "us-east-1b", "us-east-1c"]
+  default     = ["us-east-2a", "us-east-2b"]
 }
 
 variable "ami_id" {
