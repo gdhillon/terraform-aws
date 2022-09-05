@@ -1,5 +1,5 @@
 # Project name
-org = "lion" 
+org = "netxillon" 
 
 # Project name
 project = "data_platform" 
@@ -40,7 +40,3 @@ workspace_vpc = "10.155.64.0/21"
 # Trasit Gateway ID
 transit_gtway_id = "tgw-0337056ae6b70ebb3"
 
-# Redshift
-cluster_node_type        = "ra3.xlplus"
-cluster_number_of_nodes  = "1"
-automated_snapshot_retention_period = "7"
