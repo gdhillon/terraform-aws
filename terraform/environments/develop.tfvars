@@ -2,7 +2,7 @@
 org = "netxillon" 
 
 # Project name
-project = "data_platform" 
+project = "data_lake" 
 
 # Environment name to be prefixed in resource names
 environment = "dev" 
@@ -11,24 +11,24 @@ environment = "dev"
 region = "us-east-2"  
 
 # VPC Internet Facing
-cidr_ingress = "10.155.233.192/26"
-public_subnets_tgw  = ["10.155.233.192/28", "10.155.233.208/28"]
-public_subnets_workloads  = ["10.155.233.224/28", "10.155.233.240/28"]
+cidr_ingress = "10.101.101.0/26"
+public_subnets_tgw  = ["10.101.101.0/28", "10.101.101.16/28"]
+public_subnets_workloads  = ["10.101.101.32/28", "10.101.101.48/28"]
 public_availability_zones = ["us-east-2a", "us-east-2b"]
 
 # DHCP Uptions for VPC
-domain_name          = "lion.aws"
-domain_name_servers  = ["AmazonProvidedDNS", "10.155.10.5", "10.155.11.5"]
-ntp_servers          = ["10.155.10.5", "10.155.11.5"]
+domain_name          = "netxillon.net"
+domain_name_servers  = ["AmazonProvidedDNS"]
+ntp_servers          = ["169.254.169.123"]
 
 # Route 53 Domains
-route_domain1	     = "lion.aws"
-route_domain2        = "lncorp.net"
+route_domain1	     = "netxillon.net"
+route_domain2        = "example.net"
 
 # Route table CIDRs
-shared_vpc = "10.155.8.0/21"
-sap_vpc = "10.155.56.0/21"
-workspace_vpc = "10.155.64.0/21"
+shared_vpc = "11.1.1.0/24"
+app_vpc = "11.1.2.0/24"
+database_vpc = "11.1.3.0/24"
 
 # Trasit Gateway ID
 transit_gtway_id = "tgw-0337056ae6b70ebb3"

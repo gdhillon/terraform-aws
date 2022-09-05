@@ -95,7 +95,7 @@ variable "ami_id" {
 
 variable "bastion_host_key" {
   description = "SSH Key for the Bastion host in Public subnet"
-  default = "aws-deloitte.key"
+  default = "gurmukh"
 }
 
 variable "dev_vpc" {
