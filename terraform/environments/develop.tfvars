@@ -33,3 +33,4 @@ workspace_vpc = "10.155.64.0/21"
 # Trasit Gateway ID
 transit_gtway_id = "tgw-0337056ae6b70ebb3"
 
+ami_id = "ami-051dfed8f67f095f5"
