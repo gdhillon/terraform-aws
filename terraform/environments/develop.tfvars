@@ -17,12 +17,6 @@ private_subnets_redshift  = ["10.155.88.112/28", "10.155.88.128/28"]
 private_subnets_workloads  = ["10.155.90.0/23", "10.155.92.0/23", "10.155.94.0/23"]
 availability_zones = ["us-east-2a", "us-east-2b", "us-east-2c"]
 
-# VPC Internet Facing
-cidr_ingress = "10.155.233.192/26"
-public_subnets_tgw  = ["10.155.233.192/28", "10.155.233.208/28"]
-public_subnets_workloads  = ["10.155.233.224/28", "10.155.233.240/28"]
-public_availability_zones = ["us-east-2a", "us-east-2b"]
-
 # DHCP Uptions for VPC
 domain_name          = "lion.aws"
 domain_name_servers  = ["AmazonProvidedDNS", "10.155.10.5", "10.155.11.5"]
