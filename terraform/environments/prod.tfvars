@@ -1,26 +1,25 @@
 # Project name
-org = "lion" 
+org = "netxillon" 
 
 # Project name
-project = "data_platform" 
+project = "data_lake" 
 
 # Environment name to be prefixed in resource names
 environment = "prod" 
 
 # AWS region name to be used for resource provisioning
-region = "ap-southeast-2"  
+region = "us-east-2"  
 
 # VPC parameters
 cidr = "10.155.104.0/21"
 private_subnets_tgw  = ["10.155.104.0/28", "10.155.104.16/28","10.155.104.32/28"]
-private_subnets_redshift  = ["10.155.88.112/28", "10.155.88.128/28"]
 private_subnets_workloads  = ["10.155.106.0/23", "10.155.108.0/23", "10.155.110.0/23"]
 availability_zones = ["ap-southeast-2a", "ap-southeast-2b", "ap-southeast-2c"]
 
 # DHCP Uptions for VPC
 domain_name          = "lion.aws"
-domain_name_servers  = ["AmazonProvidedDNS", "10.155.10.5", "10.155.11.5"]
-ntp_servers          = ["10.155.10.5", "10.155.11.5"]
+domain_name_servers  = ["AmazonProvidedDNS"]
+ntp_servers          = ["203.29.242.183", "169.254.169.123"]
 
 # Route table CIDRs
 shared_vpc = "10.155.8.0/21"

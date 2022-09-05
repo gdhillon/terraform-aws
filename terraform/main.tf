@@ -82,7 +82,7 @@ resource "aws_security_group" "shared_vpc" {
   }
 }
 
-resource "aws_security_group" "sap_vpc" {
+resource "aws_security_group" "app_vpc" {
   name        = "${var.org}-${var.project}-${var.environment}-sap-vpc"
   description = "Allow traffic from SAP VPC"
   vpc_id      = aws_vpc.main.id
@@ -91,7 +91,7 @@ resource "aws_security_group" "sap_vpc" {
     protocol      = -1
     from_port     = 0
     to_port       = 0
-    cidr_blocks   = [var.sap_vpc]
+    cidr_blocks   = [var.app_vpc]
     description = "Allow traffic from SAP VPC"
   }
   
@@ -108,7 +108,7 @@ resource "aws_security_group" "sap_vpc" {
   }
 }
 
-resource "aws_security_group" "workspace_vpc" {
+resource "aws_security_group" "database_vpc" {
   name        = "${var.org}-${var.project}-${var.environment}-workspace-vpc"
   description = "Allow traffic from Workspace VPC"
   vpc_id      = aws_vpc.main.id
@@ -117,7 +117,7 @@ resource "aws_security_group" "workspace_vpc" {
     protocol      = -1
     from_port     = 0
     to_port       = 0
-    cidr_blocks   = [var.workspace_vpc]
+    cidr_blocks   = [var.database_vpc]
     description = "Allow traffic from Workspace VPC"
   }
   
@@ -201,16 +201,16 @@ resource "aws_route" "route_shared_vpc" {
   depends_on                = [aws_default_route_table.default_route_table]
 }
 
-resource "aws_route" "route_sap_vpc" {
+resource "aws_route" "route_app_vpc" {
   route_table_id            = aws_default_route_table.default_route_table.id
-  destination_cidr_block    = var.sap_vpc
+  destination_cidr_block    = var.app_vpc
   transit_gateway_id        = var.transit_gtway_id
   depends_on                = [aws_default_route_table.default_route_table]
 }
 
-resource "aws_route" "route_workspace_vpc" {
+resource "aws_route" "route_database_vpc" {
   route_table_id            = aws_default_route_table.default_route_table.id
-  destination_cidr_block    = var.workspace_vpc
+  destination_cidr_block    = var.database_vpc
   transit_gateway_id        = var.transit_gtway_id
   depends_on                = [aws_default_route_table.default_route_table]
 }
