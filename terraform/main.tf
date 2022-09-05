@@ -27,7 +27,7 @@ resource "aws_vpc_dhcp_options" "dhcp_options" {
 }
 
 resource "aws_vpc_dhcp_options_association" "dns_resolver" {
-  vpc_id          = aws_vpc.main.id
+  vpc_id          = aws_vpc.ingress_vpc.id
   dhcp_options_id = aws_vpc_dhcp_options.dhcp_options.id
 }
 
