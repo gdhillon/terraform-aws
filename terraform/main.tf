@@ -99,7 +99,7 @@ resource "aws_security_group" "public_workspace_vpc" {
     protocol      = -1
     from_port     = 0
     to_port       = 0
-    cidr_blocks   = [var.workspace_vpc]
+    cidr_blocks   = [var.database_vpc]
     description = "Allow traffic from shared VPC"
   }
 
