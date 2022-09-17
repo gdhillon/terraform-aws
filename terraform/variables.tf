@@ -33,7 +33,7 @@ variable "AWS_SECRET_ACCESS_KEY" {
   description = "AWS Secret Access key"
 }
 
-variable "aap_vpc" {
+variable "app_vpc" {
   type = string
   description = "CIDR block of the SAP VPC"
 }
