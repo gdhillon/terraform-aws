@@ -18,6 +18,18 @@ root_block_device {
     }
   }
 
+provisioner "file" {
+        source      = "./scripts/create_dbt_user.sh"
+        destination = "/tmp/create_dbt_user.sh"
+       
+    connection {
+      type        = "ssh"
+      user        = "ec2-user"
+      private_key = "${file("./script/gurmukh-deloitte.pem")}"
+      host        = "${self.public_ip}"
+    }
+   }
+
 tags = {
     Name = "${var.org}-${var.project}-bastion"
   }
