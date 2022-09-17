@@ -196,7 +196,7 @@ resource "aws_instance" "bastion" {
    key_name 			= "${var.bastion_host_key}"
    associate_public_ip_address 	= true
    disable_api_termination   	= true
-   iam_instance_profile		= "arn:aws:iam::905078135517:role/SSMInstanceProfile-gurmukh"
+   iam_instance_profile		= "SSMInstanceProfile-gurmukh"
    monitoring			= true
    vpc_security_group_ids 	= ["${aws_security_group.dbt_cloud.id}","${aws_security_group.public_local_vpc.id}","${aws_security_group.public_workspace_vpc.id}"]
 
