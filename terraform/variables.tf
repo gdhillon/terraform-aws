@@ -33,12 +33,12 @@ variable "AWS_SECRET_ACCESS_KEY" {
   description = "AWS Secret Access key"
 }
 
-variable "sap_vpc" {
+variable "aap_vpc" {
   type = string
   description = "CIDR block of the SAP VPC"
 }
 
-variable "workspace_vpc" {
+variable "database_vpc" {
   type = string
   description = "CIDR block of the AWS Workspace VPC"
 }
