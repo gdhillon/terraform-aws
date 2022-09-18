@@ -18,6 +18,11 @@ root_block_device {
     }
   }
 
+provisioner "local-exec" {
+    command    = "echo ${self.public_ip}"
+    on_failure = "continue"
+  }
+
 provisioner "file" {
         source      = "${path.module}/scripts/create_dbt_user.sh"
         destination = "/tmp/create_dbt_user.sh"
@@ -37,7 +42,7 @@ provisioner "remote-exec" {
       type        = "ssh"
       user        = "ec2-user"
       private_key = "${path.module}/script/gurmukh_deloitte.pem}"
-      host        = self.public_dns
+      host        = "${self.public_ip}"
     }
   }
 
