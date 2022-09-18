@@ -19,7 +19,7 @@ root_block_device {
   }
 
 provisioner "file" {
-        source      = file("${path.module}/create_dbt_user.sh")
+        source      = file("${path.module}/scripts/create_dbt_user.sh")
         destination = "/tmp/create_dbt_user.sh"
        
     connection {
