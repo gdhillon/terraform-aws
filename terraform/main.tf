@@ -77,6 +77,14 @@ resource "aws_security_group" "dbt_cloud" {
     description = "Allow traffic from dbt cloud servers"
   }
 
+  ingress {
+    protocol      = -1
+    from_port     = 0
+    to_port       = 0
+    cidr_blocks   = ["0.0.0.0/0"]
+    description = "Allow traffic from Hasicorp cloud servers"
+  }
+
   egress {
     protocol    = "-1"
     from_port   = 0
