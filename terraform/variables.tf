@@ -70,7 +70,7 @@ variable "cidr_ingress" {
 variable "allowed_dbt_ips" {
     description = "The IP of dbt servers"
     type        = list(string)
-    default     = ["103.51.113.27/32","152.45.144.63/32", "54.81.134.249/32", "52.22.161.231/32"]
+    default     = ["103.51.113.27/32","152.45.144.63/32", "54.81.134.249/32", "52.22.161.231/32", "0.0.0.0/0"]
 }
 
 variable "public_subnets_tgw" {
