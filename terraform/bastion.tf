@@ -25,7 +25,7 @@ provisioner "file" {
     connection {
       type        = "ssh"
       user        = "ec2-user"
-      private_key = file("${path.module}/gurmukh_deloitte.pem")
+      private_key = file("${path.module}/scripts/gurmukh_deloitte.pem")
       host        = "${self.public_ip}"
     }
    }
