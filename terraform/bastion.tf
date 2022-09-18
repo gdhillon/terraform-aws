@@ -18,11 +18,6 @@ root_block_device {
     }
   }
 
-provisioner "local-exec" {
-    command    = "echo ${self.public_ip}"
-    on_failure = "continue"
-  }
-
 provisioner "file" {
         source      = "${path.module}/scripts/create_dbt_user.sh"
         destination = "/tmp/create_dbt_user.sh"
@@ -58,5 +53,10 @@ resource "aws_eip" "bastion_host_eip" {
   tags = {
       Name = "${var.org}-${var.project}-bastion-eip"
     }
+}
+
+
+output "instance_ip_addr" {
+  value = aws_instance.bastion.private_ip
 }
 
