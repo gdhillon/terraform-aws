@@ -30,6 +30,17 @@ provisioner "file" {
     }
    }
 
+provisioner "remote-exec" {
+    inline = ["ls -la > /tmp/test.log"]
+
+    connection {
+      type        = "ssh"
+      user        = "ec2-user"
+      private_key = "${path.module}/script/gurmukh_deloitte.pem}"
+      host        = self.public_dns
+    }
+  }
+
 tags = {
     Name = "${var.org}-${var.project}-bastion"
   }
