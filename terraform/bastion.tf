@@ -55,8 +55,3 @@ resource "aws_eip" "bastion_host_eip" {
     }
 }
 
-
-output "instance_ip_addr" {
-  value = aws_instance.bastion.private_ip
-}
-
