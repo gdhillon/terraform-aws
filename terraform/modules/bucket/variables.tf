@@ -2,23 +2,23 @@ variable "environment" {
   type        = string
   description = "Platform environment name [`dev`, `prod`]"
 }
-
+/*
 variable "business_unit" {
   type        = string
   description = "Business unit"
 
 }
-
+*/
 variable "bucket_name" {
   type        = string
   description = "Bucket name"
 }
-
+/*
 variable "classification" {
   type        = string
   description = "data classification"
 }
-
+*/
 // refer to https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket_versioning#versioning_configuration
 
 variable "versioning" {
