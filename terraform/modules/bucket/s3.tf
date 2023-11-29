@@ -73,7 +73,7 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "encryption" {
 
 
 resource "aws_s3_bucket_acl" "acl" {
-  count = var.is_acl_on == "true" ? 1 : 0
+  count = "${var.is_acl_on}" == "true" && "${var.environment}" != "dev" ? 1 : 0
   bucket = aws_s3_bucket.bucket.id
   acl    = "private"
 }
