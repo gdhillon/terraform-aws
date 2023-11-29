@@ -3,7 +3,7 @@ module "bronze-confidential" {
   environment = var.environment
   bucket_name    = "deloittify-${var.environment}-bronze-confidential"
   versioning     = "Suspended"
-  is_acl_on      = var.environment == "dev" ? false : true
+  is_acl_on      = var.environment == "dv" ? false : true
 }
 
 module "data-gold" {
