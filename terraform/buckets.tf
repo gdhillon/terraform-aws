@@ -11,6 +11,6 @@ module "data-gold" {
    environment    = var.environment
    bucket_name    = "deloittify-dsc-${var.environment}-gold"
    versioning     = "Suspended"
-   is_acl_on      = false
+   #is_acl_on      = false
 }
 
