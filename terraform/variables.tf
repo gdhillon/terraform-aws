@@ -32,7 +32,7 @@ variable "AWS_SECRET_ACCESS_KEY" {
   type = string
   description = "AWS Secret Access key"
 }
-
+/*
 variable "cidr" {
   type = string
   description = "CIDR block to be used for VPC, e.g. 10.5.0.0/16"
@@ -147,3 +147,4 @@ variable "test_vpc" {
     type        = string
     default     = "10.155.96.0/21"
 }
+*/
